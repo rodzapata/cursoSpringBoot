@@ -5,1025 +5,174 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Java script</title>
+    <title>Curso de Spring Boot</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <script>
-        var hola = "hola mundo";
-        let mensaje = new String("Hola mundo objeto");
-        console.log(hola);
-        console.log(mensaje);
-        console.log("cantidad de letras en la variable mensaje: " + mensaje.length);
-        console.log("todo en mayuscula : " + mensaje.toUpperCase());
-
-        setenseEnglish = "learn english and Javascrip too"
-        arreglo = setenseEnglish.split(" ")
-        console.log(setenseEnglish.split(" "));
-        console.log(arreglo);
-
-        //Concatenando variables
-        let name = "rodney";
-        let lastName = "zapata";
-        let greeting = "wellconme, mi nombre es : " + name + " " + lastName;
-        console.log(greeting);
-
-        //interpolacion de variables 
-        //usando templete string
-        
-        let saludo2 =`Hola, mi nombre es ${name} ${lastName}`;
-        console.log(saludo2);
-
-        
-
-        let nodoUL="<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
-        let season1="invierno";
-        let season2="verano";
-        let season3="primavera";
-        
-        console.log("----interpolando dentro de un codigo HTML ----")
-        let nodoUl2=
-        `<ul>
-            <li>${season1}</li>
-            <li>${season2}</li>
-            <li>${season3}</li>
-        </ul>`;
-
-        console.log(nodoUl2);
-
-        let a=5;
-        let b=6.48;
-        let c=a+b;
-
-        console.log(a,b);
-        console.log(c);
-
-        //si el valor est guardado como caracter hay que convertirlo a numero
-        d="10.65"
-        console.log(a+d);
-        console.log(a+parseInt(b));
-        console.log(a+b.toFixed(1));
-   
-        //tipo de dato
-        console.log(typeof a);
-        console.log(typeof b);
-        console.log(typeof d);
-
-        //numeros boleanos
-        let verdadero=true;
-        let falso=false
-        console.log(verdadero, falso);
-        console.log(typeof verdadero);
-
-        //los numeros -negativos y positivos son verdaderos y  el cero es falso
-        let negativo=-2;
-        let cero=0;
-        let positivo=5;
-        console.log("cero: "+Boolean(cero));
-        console.log("negativo: "+Boolean(negativo));
-        console.log("positivo: "+Boolean(positivo));
-        console.log(typeof negativo, typeof positivo);
-        console.log(negativo, positivo);
-        console.log("cadena vacia: "+Boolean(""));
-        console.log("cadena con un espacio: "+Boolean(" "));
-        console.log("cadena con un punto: "+Boolean("."));
-
-        //variables infefinida
-        let indefinida;
-        //variable null
-        let nulo=null
-        console.log("variable indefinida "+indefinida);
-        console.log("variable nullas "+nulo);
-
-        //valor NaN no es un numero
-        let noEsUnNumero="hola"*3;
-        console.log(noEsUnNumero);
-
-        //funciones
-        function saludar(nombre, edad){
-            console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
-        }
-
-        //invocamos la funcion
-//        saludar("rodney zapata",47);
-        saludar();
-
-
-        //funcion expresada o anonima
-        const funcionExpresion=function(){
-            console.log("funcion anonima, no se conoce el nombre de la funcion ni el valor de las variables");
-        }
-
-        //invocamos la funcion
-        funcionExpresion();
-
-        //array
-        const pruebaArray=[15,"hola",true,["A","B","C"]];
-        console.log(pruebaArray);
-
-        //vemos elementos del array
-        console.log(pruebaArray[1]) //nos muestra el elemnto Hola
-        console.log(pruebaArray[3][1]) //nos muestra el elemento dentro de otro vector osea la letra B
-
-        //array a partir del 2015
-        const pruebaArray2=Array.of(17,"wellcome");
-        console.log(pruebaArray2);  
-
-        //tambien se puede crear usando la POO
-        const objArray= new Array(1,2,"hola");
-        console.log(objArray);
-
-        //tambien se puede definir un array de 100 elementos que se llene automaticamente con el valor predeterminado false
-        const dArray= new Array(100).fill(false);
-        console.log(dArray);    
-
-        //array de cololres
-        const colores= new Array("Amarillo","azul","rojo");
-        console.log(colores);
-        
-        //agregamos el color verde
-        colores.push("verde");
-        console.log(colores);
-
-        //quita el ultimo elemento del array, quedando el array como estaba inicialmente
-        colores.pop();
-        console.log(colores);
-
-        //ciclo FOR dentro una funcion asincronica
-        colores.forEach(function(el,index){
-         console.log(`<li id="${index}">${el}</li>`);
-        });
-
-        //Objeto cadena de caracter
-        const palabra= new String("cadena de datos");
-        console.log(palabra);
-
-        //Objetos en java script
-        const obj=new Object();
-        console.log(obj);
-      
-        //objeto usuario
-        const usuario={
-            nombre:"Rodney",
-            apellido:"zapata",
-            direccion:"kra 5B No. 56c-93",
-            edad:47,
-            pasaTiempo:["Leer","programar","enseñar"],
-            soletero:false,
-            contacto:{
-                email:"rzapata@serviparamo.com.co",
-                telefono:"3103724590"
-            },
-            saludar:function(){
-                console.log(`Hola`);
-            },
-            decirnombre:function(){
-                console.log(`mi nombre es ${this.nombre}`)
-            }
-        }
-
-        console.log(usuario);
-        console.log(usuario["nombre"]);
-
-        //tambien se puede llamar la propiedad de un objeto utilizando el punto
-        console.log(usuario.apellido);
-        console.log(usuario.saludar());
-
-        //llamamos a la funcion saludar que está dentro del objeto Usuario
-        usuario.saludar();  
-        usuario.decirnombre();
-
-        //nombre de los atributos y valor almacenado
-        console.log(Object.keys(usuario));
-        console.log(Object.values(usuario));
-        
-        //funcion
-        const saludar2=function(){
-            console.log(`Hola dentro de un objeto`);
-        }
-
-        saludar2();
-        
-
-        
-</script>
     <!-- <li id="$(index)">$(el)</li> -->
-    <h1>Curso de Java Script</h1>
+    <h1>Curso de Spring Boot</h1>
     <h2>Indice Tematico</h2>
     <ul>
-        <li><a href="cursoJavaScript.html#referencia">Referencias</a></li>
-        <li><a href="cursoJavaScript.html#variables">Variables</a></li>
-        <li><a href="cursoJavaScript.html#concatenacion">Concatenacion e interpolacion</a></li>
-        <li><a href="cursoJavaScript.html#numeros">varibles numericas</a></li>
-        <li><a href="cursoJavaScript.html#bolean">valores boleanos</a></li>
-        <li><a href="cursoJavaScript.html#nulos">valores nulos</a></li>
-        <li><a href="cursoJavaScript.html#compuesto">Datos compuesto</a></li>
-        <li><a href="cursoJavaScript.html#arrays">arrays</a></li>
-        <li><a href="cursoJavaScript.html#ciclos">ciclos</a></li>
-        <li><a href="cursoJavaScript.html#dom">manipulacion del DOM</a></li>
-        <li><a href="cursoJavaScript.html#json">Json</a></li>
-        <li><a href="cursoJavaScript.html#prototipo">Prototipo de Instancias</a></li>
-        <li><a href="cursoJavaScript.html#map">metodo map() en array</a></li>
-        <li><a href="cursoJavaScript.html#at">metodo at() en array</a></li>
-        <li><a href="cursoJavaScript.html#push">metodo push() en array</a></li>
-        <li><a href="cursoJavaScript.html#pop">metodo pop() en array</a></li>
-        <li><a href="cursoJavaScript.html#forEach">metodo forEach() en array</a></li>
-        <li><a href="cursoJavaScript.html#slice">metodo slice() en array</a></li>
-        <li><a href="cursoJavaScript.html#objeto">metodo slice() en array de objeto</a></li>
+        <li><a href="cursoSpringBoot.html#referencia">Referencias</a></li>
+        <li><a href="cursoSpringBoot.html#patrones">Patrones de diseño mas usado con Spring Boot</a></li>
+        <li><a href="cursoSpringBoot.html#atajos">Atajos del teclado en Inellig J</a></li>
+        <li><a href="cursoSpringBoot.html#colecciones">Colecciones en java</a></li>
 
-      
-    
+
     </ul>
 
-    <a href="cursoJavaScript.html">⏫</a>
+    <a href="cursoSpringBoot.html">⏫</a>
     <hr>
     <h2 id="referencia">Referencias</h2>
     <article>
-        esta pagina es importantes para seguir paso a paso el curso :
-        <a href="https://www.youtube.com/watch?v=tmRa0_EvMoc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=4">Curso de
-            JavaScript por Jonathan Mircha</a> <br>
-        Extensiones recomendadas que se deben instalar en visual code, para trabajar con JavaScript:
-        ESLint nos da utocompletado y nos guia con mensajes de error desde la consola, Ptettier para formatear documento. <br>
-        Tambien existe un curso completo buenisimo en freeCodeCamp <a href="https://www.freecodecamp.org/espanol/news/prototipo-javascript-expliacado-con-ejemplos/">Prototipos</a>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="Variables">Variables</h2>
-    <article>
-        esta pagina es importantes para seguir paso a paso el curso :
-        para definir las variables se recomienda utilizar <strong>let</strong> y dejar de utilizar <strong>var</strong>,
-        porque si se defines con <br>
-        <strong>var</strong>, las varibles quedan como globales y por motivo de seguridad no se recomienda. <br><br>
-        las variables tipo <strong>string</strong>, se pueden definir de la siguiente forma: <br>
-        <pre>
-        <code>
-            let pais="Colombia"; 
-            let ciudad='Barranquilla';
-
-            let mensaje=new String("Hola mundo");
-            console.log(mensaje);
-            console.log("todo en mayuscula : "+mensaje.toUpperCase());
-
-        </code>
-     </pre>
-        Tambien podemos convertir una frase en un arreglo, por ejemplo la palabra que contega el contenido "learn
-        englihs and Javascrip too" <br>
-        donde el separador de cada posicion del arreglo será el espacio en blanco, quedando de la siguiente forma: <br>
-        <pre>
-        <code>
-            setenseEnglish="learn english and Javascrip too"
-            arreglo=setenseEnglish.split(" ")
-            console.log(setenseEnglish.split(" "));
-            console.log(arreglo);
-    
-        </code>
-     </pre>
-     <pre>
-        Ademas de enviar los resultado a console tambien podemos enviarlos al cuerpo del documento htl
-        utiliadon el comando <b>document</b> de la siguiente forma:
-        <code>
-            setenseEnglish="learn english and Javascrip too"
-            document.write(setenseEnglish);
-        </code>
-     </pre>
-     <pre>
-        nota:
-        para desbloquer la divicion del bloque en la pantalla
-        usamos el menu ver-apariencia-sticky scrool
-
-     </pre>
-        Tembien podemos envar el resultado a traves de una ventana modal
-        utilizando el comando <b>alert</b> de la siquiente forma:
-        donde podemos mostra la salida a a travez de una ventana modal 
-        comando la ejecucion se detiene y espera que el usuario desde el navegador
-        confirme los datos.
-        <pre>
-            <code>
-                alert("mensaje por pantalla")
-            </code>
-        </pre>
-        si queremos obtener el valor del usuario pero esde el navegador
-        debemos usar el comando <b>promp</b>
-        <pre>
-            <code>
-                nombre=prompt("entre su nombre");
-            </code>
-        </pre>
-
-        ahora vamos a crear un boton dentro del archivo <strong>variables.html</strong> que se conecta
-        a una funcion que se ejecuta dentro del archivo <strong>variables.cs</strong> 
-        si se quiere ampliar al informacion podemos consulta la pagina 
-        <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables">variables enlasado a un metodo</a>
-        <pre>
-            <code>
-                html 
-                &lt;button id="saludar">saludar&lt;/button>
-
-                JavaScrip
-                
-                //funcion saludar que es llamada desde el html
-                const saludo=document.getElementById('saludar');
-                saludo.onclick=function(){
-                    let nombreTeclado=prompt('Digite su  nombre');
-                    alert(`Hola ${nombreTeclado},  encantado de verte!`);
-                }
-
-                Hoja de estilo 
-                #saludar{
-                    background-color: blue;
-                    color: white;
-                    height: 30px ;
-                    border-radius: 15%;
-                }       
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="Concatenacion">Concatenacion e interpolacion de String</h2>
-    <article>
-        a partir del 2015 se incluyó algo llamamo <strong>template String</strong>, esto nos permite meter el valor
-        de una variable dentro de otra variable, esto seria una gran mejora que evita el uso de concatenar variables.
+        creacion de una api-rest con spring boot <a href="https://www.youtube.com/watch?v=7vHzVN0EiQc">curso Spring boot por Lucas moy</a> <br>
+        paso a paso jakarta tomado como base el blog <a href="https://danielme.com/curso-jakarta-ee-indice/">Danielme.com</a> <br>
+        programación funcional <a href="https://programandoenjava.com/streams-en-java-8/">programacion funcional en Java 8</a>, ademas
+        del blog <a href="https://blog.codmind.com/que-es-la-programacion-funcional-en-java/">programacion funcional </a> <br>
+        configuration initial, utilizaremos Inelig J , lo primero es que permita umentar el tamaño de la letra con Ctrol+Rueda del mouse.
+        <strong>File - Setting - Edidtor - General y chuleamos la opcion Change font size with Crl + Mouse</strong>
         <br>
-        <pre>
-            <code>
-                //Concatenando variables
-                let name="rodney";
-                let lastName="zapata";
-                let greeting= "wellconme, mi nombre es : "+name+" "+lastName;
-                console.log(greeting);
+        Tambien podemos encontror un blog que trata sobre las colecciones . <a href="https://www.cosmiclearn.com/lang-es/java-collections.php">Colecciones</a>
+        <br>
 
-                //interpolacion de variables 
-                //usando templete string
-                let saludo2 =`Hola, mi nombre es ${name} ${lastName}`;
-                console.log(saludo2);
-        
-                let nodoUL="<ul> <li>Invierno</li> <li>Verano</li>  <li>Primavera</li>  </ul>"
-                let season1="invierno";
-                let season2="verano";
-                let season3="primavera";
-                
-                console.log("----interpolando dentro de un codigo HTML ----")
-                let nodoUl2=
-                `<ul>
-                    <li>${season1}</li>
-                    <li>${season2}</li>
-                    <li>${season3}</li>
-                </ul>`;
-        
-                console.log(nodoUl2);
-                
-            </code>
-        </pre>
-        para sacar el `` hay que usar la tecla altGr + tecla "}"
-    </article>
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="numeros">variables numericas</h2>
-    <article>
-        en JavaScript los numeros son numero, no importa si tienen parte decimal o sin son enteros. <br>
-        <pre>
-            <code>
-                let a=5;
-                let b=6.48;
-                let c=a+b;
-        
-                console.log(a,b);
-                console.log(c);
-        
-                //si el valor esta guardado como caracter hay que convertirlo a numero
-                d="10.65"
-                console.log(a+d);
-                console.log(a+parseInt(b));
-                console.log(a+b.toFixed(1));
-
-                //tipo de dato
-                console.log(typeof a);
-                console.log(typeof b);
-                console.log(typeof d);
-                        
-            </code>
-        </pre>
     </article>
 
-    <a href="cursoJavaScript.html">⏫</a>
+    <a href="cursoSpringBoot.html">⏫</a>
     <hr>
-    <h2 id="bolean">valores boleanos </h2>
+    <h2 id="patrones">Patrones de diseño mas usado con Spring Boot</h2>
     <article>
-        son valores de verdadero o falso, por ejemplo : <br>
-        <pre>
-            <code>
-                //numeros boleanos
-                let verdadero=true;
-                let falso=false
-                console.log(verdadero, falso);
-                console.log(typeof verdadero);
-        
-                //los numeros -negativos y positivos son verdaderos y  el cero es falso
-                let negativo=-2;
-                let cero=0;
-                let positivo=5;
-                console.log("cero: "+Boolean(cero));
-                console.log("negativo: "+Boolean(negativo));
-                console.log("positivo: "+Boolean(positivo));
-                console.log(typeof negativo, typeof positivo);
-                console.log(negativo, positivo);
-                console.log("cadena vacia: "+Boolean(""));
-                console.log("cadena con un espacio: "+Boolean(" "));
-                console.log("cadena con un punto: "+Boolean("."));
-      
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="nulos">valores nulos </h2>
-    <article>
-        en Javascript existe una diferencia entre variables <strong>undefined</strong> y variables <strong>null</strong>, la primera <br>
-        es cuando se crea la variable pero no se ha inicializado entonces Javascrit le asigna como valor <strong>indefinido</strong>, la <br>
-        segunda es cuando el programador quiere hacer enfasis que ahun no le asignado ningun valor <strong>null</strong>. <br><br>
-        <pre>
-            <code>
-                //variables infefinida
-                let indefinida;
-                //variable null
-                let nulo=null
-                console.log("variable indefinida "+indefinida);
-                console.log("variable nullas "+nulo);
-      
-            </code>
-        </pre>
-        Tambien existe un tipo de datos <strong>NaN</strong>, que significa no es un numero
-        <pre>
-            <code>
-                //valor NaN no es un numero
-                let noEsUnNumero="hola"*3;
-                console.log(noEsUnNumero);
-        
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="compuesto">Datos compuestos </h2>
-    <article>
-        Hasta el momento hemos utilizado datos primitivos: <strong>number, string, boolean, undefined, null</strong>. <br>
-        Ahora vamos a trabajar los datos compuestos: <strong>object={}, array=[], funcion(), class={}, etc</strong>. <br><br>
-
-        primero empezemos con las funciones, a las funciones se les puede pasar parametros , como en el siguiente ejemplo: <br>
-        <pre>
-            <code>
-                //definir funcion
-                function saludar(nombre, edad){
-                    console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
-                }
-
-                //invocar a la funcion
-                saludar("Rodney Zapata",47);
-            </code>
-        </pre>
-        En el case que se invocar la funcion solamente sin pasarles parametros, entonces Javasript colocara los valores como <strong>indefinided</strong>,
-        Tambien se puede colocar valores por defectos a partir del 2015 y es de la siguiente forma:
-        <pre>
-            <code>
-                <code>
-                    //definir funcion con valores de parametros por defecto
-                    function saludar(nombre="", edad=0){
-                        console.log(`mi nombre es ${nombre} y tengo ${edad} años `)
-                    }
+        Los patrones de diseños mas utilizados son: <br>
+        <strong>1. Patrón MVC (Model-View-Controller):</strong> <br>
+        <strong>Descripción:</strong> Este patrón organiza el código en tres componentes: el Modelo (donde se encuentran las clases de negocio y datos),
+         el Controlador (que maneja las peticiones del cliente) y la Vista (que muestra los datos o devuelve la respuesta al cliente). <br>
+        <strong>Uso en Spring Boot:</strong>Spring Boot usa este patrón especialmente en aplicaciones web o APIs REST. <br>
+         Los controladores están anotados con @Controller o @RestController, 
+         los modelos son las entidades anotadas con @Entity, 
+         y la vista, si existe, puede ser manejada con tecnologías como <strong>Thymeleaf</strong>, o en el caso de APIs REST, el JSON o XML generado. <br><br>
     
-            </code>
-        </pre>   
-        existe otro tipo de funcion llamada anonima, donde es una funcion dinamica donde no se conoce el nombre de la funcion ni el valor de la variable. <br>
-        Tambien primero hay que definirla para despues ser invocadas en caso contrario genera error, en cambio las funciones anterior <strong>declarada</strong> 
-        pueden ser invocadas en cualquier parte del codigo inclusive antes de ser definida.<br><br>
+         <strong>2. Patrón DAO (Data Access Object):</strong> <br>  
+         <strong>Descripción:</strong> El patrón DAO se utiliza para abstraer el acceso a la base de datos. <br>
+          Ayuda a separar la lógica de negocio del acceso a los datos, lo que hace que la aplicación sea más mantenible. <br>
+          <strong>Uso en Spring Boot:</strong> Los DAOs suelen estar anotados con @Repository y usan tecnologías como JPA o Spring Data 
+          para interactuar con la base de datos. <br>
+          Ejemplo: 
         <pre>
             <code>
-                //funcion expresada o anonima
-                const funcionExpresion=function(){
-                    console.log("funcion anonima, no se conoce el nombre de la funcion ni el valor de las variables");
+                @Repository
+                public interface UserRepository extends JpaRepository&lt;User, Long> {
                 }
-        
-                //invocamos la funcion
-                funcionExpresion();
-        
-            </code>
-        </pre>    
-
-        <h3>Arrays</h3> 
-        los array se define entre corchetes [], y puedes contener elementos de distintos tipos como numeros, caracter, booleanos inclusive, <br>
-        pueden contener a su ves otro array, como se muesta a continuacion: <br> 
-        <pre>
-            <code>
-                //array
-                const pruebaArray=[15,"hola",true,["A","B","C"]];
-                console.log(pruebaArray);
-        
-                //vemos elementos del array
-                console.log(pruebaArray[1]) //nos muestra el elemnto Hola
-                console.log(pruebaArray[3][1]) //nos muestra el elemento dentro de otro vector osea la letra B
             </code>
         </pre>
-        a partir del 2015 se agregó que para definir un array se debe hacer de la suiguiente forma:
+
+        <strong>3. Patrón DTO (Data Transfer Object):</strong> <br>
+        <strong>Descripción:</strong> El patrón DTO se utiliza para transferir datos entre diferentes capas de la aplicación. <br>
+        Sirve para encapsular los datos que deben ser enviados a través de la red o entre componentes, y a menudo se usa para evitar el exceso de información innecesaria.
+        Uso en Spring Boot: Muy común en aplicaciones REST, donde los datos de las entidades se transforman en DTOs antes de enviarlos como respuesta a los clientes. <br>
+        Ejemplo:
         <pre>
             <code>
-                //array a partir del 2015
-                const pruebaArray2=Array.of(17,"wellcome");
-                console.log(pruebaArray2);  
-        
-                //tambien se puede crear usando la POO
-                const objArray= new Array(1,2,"hola");
-                console.log(objArray);
-        
-                //tambien se puede definir un array de 100 elementos que se llene automaticamente con el valor predeterminado false
-                const dArray= new Array(100).fill(false);
-                console.log(dArray);    
-        
-                //array de cololres
-                const colores= new Array("Amarillo","azul","rojo");
-                console.log(colores);
+                public class UserDto {
+                    private Long id;
+                    private String name;
+                    private String email;
+                }
                 
-                //agregamos el color verde
-                colores.push("verde");
-                console.log(colores);
-
-                //quita el ultimo elemento del array, quedando el array como estaba inicialmente
-                colores.pop();
-                console.log(colores);
-
-                //ciclo FOR dentro una funcion asincronica
-                colores.forEach(function(el,index){
-                 console.log(`<li id="${index}">${el}</li>`);
-                });
             </code>
         </pre>
-        <h3>Objetos</h3> 
-        se dice que en Javascrip todo es un objeto, si creamos una cadena de caracteres internamente es un objeto. <br>
-        notemos que tanto los objetos como las caracteres se identifica con <strong>{ }</strong>, como se muestra a continuacion: <br>
-        un objeto contienes diferentes tipos de datos, numero, caracteres, inclusive <strong>arrays</strong>  y hasta otros <strong>objetos</strong> . <br>
-        Hasta se puede que el campo llame una funcion. <br>
-        en POO a las varibles que estan dentro del objeto se le llama <strong>atributos / propiedades</strong> y las funciones se les llama, <br>
-        <strong>metodos</strong>
+       
+        <strong>4. Patrón Singleton:</strong> <br>
+        <strong>Descripción:</strong> Garantiza que solo exista una instancia de una clase en toda la aplicación. <br>
+        <strong>Uso en Spring Boot:</strong>Spring Boot usa este patrón para gestionar <strong>beans</strong> dentro del contexto de Spring. <br>
+        Por defecto, los beans en Spring son Singletons, lo que significa que solo hay una instancia de cada bean por contexto de aplicación. <br>
+        Ejemplo:
         <pre>
             <code>
-                //Objeto cadena de caracter
-                const palabra= new String("cadena de datos");
-                console.log(palabra);
-        
-                //Objetos en java script
-                const obj=new Object();
-                console.log(obj);
-              
-                //objeto usuario
-                const usuario={
-                    nombre:"Rodney",
-                    apellido:"zapata",
-                    direccion:"kra 5B No. 56c-93",
-                    edad:47,
-                    pasaTiempo:["Leer","programar","enseñar"],
-                    soletero:false,
-                    contacto:{
-                        email:"rzapata@serviparamo.com.co",
-                        telefono:"3103724590"
-                    },
-                    saludar:function(){
-                        console.log(`Hola`);
-                    },
-                    decirnombre:function(){
-                        console.log(`mi nombre es ${this.nombre}`)
+                @Service
+                public class UserService {
+                    // Esta clase será un singleton
+                }
+            </code>
+        </pre>
+
+        <strong>5. Patrón Dependency Injection (DI):</strong> <br>
+        <strong>Descripción:</strong>  Es uno de los patrones más importantes y básicos en Spring. <br>
+         Permite inyectar las dependencias necesarias en una clase desde afuera en lugar de crear dependencias dentro de la propia clase. <br>
+         <strong>Uso en Spring Boot:</strong>  Spring Boot utiliza inyección de dependencias de manera predeterminada mediante anotaciones como
+         <strong>@Autowired, @Service, @Repository</strong> , etc. <br>
+         Ejemplo:
+         <pre>
+             <code>
+                @Service
+                public class UserService {
+                
+                    private final UserRepository userRepository;
+                
+                    @Autowired
+                    public UserService(UserRepository userRepository) {
+                        this.userRepository = userRepository;
                     }
                 }
-        
-                console.log(usuario);
-                console.log(usuario["nombre"]);
-        
-                //tambien se puede llamar la propiedad de un objeto utilizando el punto
-                console.log(usuario.apellido);
-                console.log(usuario.saludar());
-        
-                //llamamos a la funcion saludar que está dentro del objeto Usuario
-                usuario.saludar();  
-                usuario.decirnombre();
-        
-                //nombre de los atributos y valor almacenado
-                console.log(Object.keys(usuario));
-                console.log(Object.values(usuario));
-                
-                //funcion
-                const saludar2=function(){
-                    console.log(`Hola dentro de un objeto`);
-                }
-        
-                saludar2();
             </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="arrays">Arrays </h2>
-    <article>
-        los arrays o areglos, tambien llamados matrices , es un objeto que puede contener otros objetos,
-        primero crearemo una lista de compras <strong>shipping</strong>, que contiene:
-        pan, leche, queso, pastas, fideos
-        para mayor informacion podemos consulta la pagina <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays"> arrays </a>
-        <pre>
-            <code>
-                // creamos lita de compras
-                const shoping=["bread","milk","cheese","hummus","noodles"];
-                console.log(shoping);
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="ciclos">ciclos </h2>
-    <article>
-        existen ciclos <strong>for</strong>, cuando sabemos 
-        
-
-        si se quiere profundizar mas sobre los ciclos podemos consultar la documentacion oficial
-        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">ciclos documentacion </a><br>
-        Tambien podemos ver en la pagina de freecodecamp donde se amplia el tema
-        <a href="https://www.freecodecamp.org/espanol/news/tutorial-de-javascript-arrayforeach-como-iterar-a-traves-de-elementos-en-un-arreglo/">freeCodeCamp</a>
-        <pre>
-            <code>
-                //ciclo for 
-                console.log(" -----ciclo for ------")
-                const fruit=["pear","apples","grape"];
+         </pre>
+         
+         <strong>6. Patrón Factory:</strong> <br>
+         <strong>Descripción:</strong>Crea instancias de objetos sin que el código de la aplicación sepa los detalles de la creación. <br>
+         <strong>Uso en Spring Boot:</strong> Spring Boot permite la creación de beans personalizados mediante fábricas (@Bean en clases de configuración), <br>
+         lo que sigue el patrón de diseño Factory. <br>
+         Ejemplo:
+         <pre>
+             <code>
+                @Configuration
+                public class AppConfig {
                 
-                for (let i = 0; i < fruit.length; i++) {
-                    const element = fruit[i];
-                    console.log(element);
-                    
-                }
-                
-                // ciclo forEach
-                console.log(" -----ciclo forEach ------")
-                
-                fruit.forEach(element => {
-                    console.log(element);
-                    
-                });
-                
-                //ciclo de un array que cotiene varios objetos
-                console.log(" -----ciclo un arry que contiene varios objetos ------")
-                const friends=[
-                    {
-                        name: "james",
-                        profession: "Analist"
-                    },
-                
-                    {
-                        name: "leonardo",
-                        profession: "Designer"
-                
+                    @Bean
+                    public UserService userService() {
+                        return new UserServiceImpl();
                     }
-                ]
-                
-                friends.forEach(element => {
-                    console.log('name  :' +element.name+' profesion : '+element.profession);
-                });
-                
-            </code>
-        </pre>
-        Tambien es muy utilizada que al reccorrer el ciclo por cada interacion llame a una funcion, por ejemplo
-        al recorrer el array de fruata le pases el nombre y el indice a una funcion, la funcion la llamaremos <strong>hayFruta</strong> <br>
-        <pre>
-            <code>
-                // array de frutas
-                const fruit=["pear","apples","grape"];
-
-                //funcion hayFruta
-                function hayFruta(nombre,indice){
-                    console.log(`la fruta es ${nombre} con el indice ${indice}` );
                 }
-
-                //recorremo el arreglo de frutas y le pasamo el nombre y el indice
-                fruit.forEach((nombre, indice) => hayFruta(nombre,indice));
-
             </code>
-        </pre>
-        En caso que <strong>fruit</strong> tanga el nombre de la fruta y el color, entonces seria en vector de objetos.
-        y la funcion llamada debe mostrarno el nombre y el color de la fruta 
-        <pre>
-            <code>
-                //creamos un array de objetos 
-
-                const frutt2=[
-                    {
-                        name: "pear",
-                        color: "green"
-                    },
-                    {
-                        name: "apple",
-                        color: "red"
-                    },
-                    {
-                        name: "grape",
-                        color: "purble"
-                    },
-                ]
-                
-                
-                // funcion hayfruta2
-                function hayFruta2(fruta, indice){
-                    console.log(`el nombre es ${fruta.name} y el color es ${fruta.color}`);
+         </pre>
+ 
+         <strong>7. Patrón Proxy:</strong> <br>
+         <strong>Descripción:</strong> Proporciona un intermediario o representante que controla el acceso a otro objeto. <br>
+         <strong>Uso en Spring Boot:</strong>Este patrón es utilizado por Spring AOP (Aspect-Oriented Programming) para implementar características <br>
+         transversales como la seguridad,  el logging o las transacciones. <br>
+         Ejemplo:
+         <pre>
+             <code>
+                @Transactional
+                public void someTransactionalMethod() {
+                    // Este método será manejado por un proxy de Spring para transacciones
                 }
-                
-                // pasamos el nombre a travez de ciclo
-                frutt2.forEach((nombre, indice)=> hayFruta2(nombre,indice) );
-            </code>
-        </pre>
-
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="dom">Manipulacion del DOM </h2>
-    <article>
-        para la manipulacion del DOM, donde de javascript podemos manipular el  html
-        existe una serie de pasos a seguir como se muestra en el link a continuacion
-        <a href="https://www.youtube.com/watch?v=iaLiOXXR8eI&list=PLg9145ptuAijiWx4ixGBCZB0kh6YEeNqf">Manipulacion del DOM con yackyjon </a> <br>
-        Hay otro curso bastante practico sobre manejo del DOM, que lo podemos encontar en 
-        <a href="https://www.youtube.com/watch?v=NuG59Zw8wf4">CURSO DOM JavaScript MODERNO - PRACTICO por AlexCGDesigne</a>
-        <pre>
-            <code>
-                //variables infefinida
-                let indefinida;
-                //variable null
-                let nulo=null
-                console.log("variable indefinida "+indefinida);
-                console.log("variable nullas "+nulo);
-      
-            </code>
-        </pre>
-    </article>
-
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="json">jSon </h2>
-    <article>
-        Json es un formato ligero de intercambio de datos. Esta construido por dos estructura :
-        la primera es una coleccion de pares compuesto por nombre clave  / valor
-        la segunda es un lista ordenada de valores, como arreglos, vectores, listas o secuencias.
-        es un formato universal y no depende del lenguaje de programacion, es untilizados por todos como:
-        java, javaScrip, c#, python, perl, etc.
-        los datos deben pasarse entre comillas dobles. y si creamos archivos deben tenere la extension <strong>.json</strong>
-
-        para mayor informacion se puede consultar la pagina 
-        <a href="https://www.json.org/json-es.html" target="_blank">Json en español</a>
-        FAzt tambien muestra un tutoirial 
-        <a href="https://www.youtube.com/watch?v=LJzDHKPLWYw" target="_blank">Json Fazt</a>
+             </code>
+         </pre>
+         <strong>Conclusión:</strong> <br>
+         El patrón MVC es el más utilizado en Spring Boot, especialmente para aplicaciones web y APIs REST. <br>
+         Sin embargo, Spring Boot es flexible y permite el uso de otros patrones como DAO, DTO, Singleton, Factory, y Dependency Injection, <br>
+         todos fundamentales en aplicaciones empresariales. La combinación de estos patrones asegura una arquitectura robusta, mantenible y extensible. <br>
         
-        <pre>
-            <code>
-                // creamos un objeto User
-                const User={
-                    name:"rodney",
-                    lasName:"zapata",
-                    hobies:["code","estudy","show tv"],
-                    age:49
-                }
-                                
-                //este es un objeto dentro de javascrip
-                console.log(User);
-
-                //convertimos el objeto en un json de intercambio
-                console.log(JSON.stringify(User));
-                     
-            </code>
-        </pre>
-        si observamos en el primero nos muestra desde el navegador que es un objeto <strong>prototype</strong> de JavaScript,
-        pero el segundo nos muestra entre llaves y los campos claves encerrados entre comillas dobles, que nos indica que 
-        en un formato de json de intercambio.
-        Tambien podemos validar si el formato esta correcto uando la pagina web
-        <a href="https://jsonlint.com/" target="_blank">Json validator</a>         <br><br>
-        Tambine podemos formatear un archivo xml con la pagina xmlt formatear
-        <a href="https://www.site24x7.com/es/tools/xml-formateador.html">Formateador de xml</a>
-
-
-        Tambien podemos mostrar los datos de un objeto uilizano el punto <strong>.</strong> y lo enviamos a consola como a continuacion:
-        <pre>
-            <code>
-                // si queremos ver el nombre de usuario seria asi
-                console.log(User.name);
-                console.log(User.hobies);        
-            </code>
-        </pre>
-
-        podemos crear una lista de datos llamados <strong>friends</strong>, que contiene los amigos de un usuario, cada amigo cuenta 
-        con un nombre y una profesion, entonces el objeto en javascript seria:
-        <pre>
-            <code>
-                //lista de amigos
-                const friend=[
-                    {
-                        name:"Marcos",
-                        profession:"counter"
-                    },
-                
-                    {
-                        name:"Leonardo",
-                        profession:"develope web"
-                    }
-                ]
-                
-                User.friend=friend;
-                console.log(JSON.stringify(User));
-            </code>
-        </pre>
-
-        Tambien podemos tener un objeto html <strong>&lt;Ul&gt;</strong> por ejemplo una lista de amigos que es llenado
-        desde un ciclo en javascript 
-        <pre>
-            <code>
-                //lista de amigos
-                const friend=[
-                    {
-                        name:"Marcos",
-                        profession:"counter"
-                    },
-                
-                    {
-                        name:"Leonardo",
-                        profession:"develope web"
-                    },
-                
-                    {
-                        name:"joseph",
-                        profession:"analista"
-                    }
-                
-                ]
-
-                let outPut='';
-                friend.forEach(element => {
-                    outPut=outPut+`&lt;li&gt;${element.name}&lt;/li&gt;`
-                });
-
-                console.log(document.getElementById('people'));
-                document.getElementById('people').innerHTML=outPut;
-
-            </code>
-        </pre>
-
-        Ahora podemos hacer el caso contratio osea tener un Json y convertirlo en un objeto javascript,
-        para esto necesitamos del comando <strong>parse</strong>
-
-        <pre>
-            <code>
-                //proceso contrario converir un Json en un objeto de Javascript
-                console.log("-----convertir un Json a un objeto de JavaScrip ----")
-                const jsonOrig='{"name" : "rodney"}';
-                console.log(JSON.parse(jsonOrig));
-            </code>
-        </pre>
-
-
-    </article>
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="prototipo">Prototipo de instancia de un objeto</h2>
-    <article>
-        JavaScript es un lenguaje basado en prototipos,  por lo tanto entender el objeto <strong>prototype</strong> 
-        es uno de los conceptos más importantes que los profesionales de JavaScript necesitan saber.
     </article>
 
-    <a href="cursoJavaScript.html">⏫</a>
+    <a href="cursoSpringBoot.html">⏫</a>
     <hr>
-    <h2 id="map">metodo map con array</h2>
+    <h2 id="atajos">Atajos del Teclado en Intellig J</h2>
     <article>
-        El metodo <strong>map</strong> te permite crear un nuevo array con los resultados de la llamada de una funcion indicada.
-        por ejemplo tenemos un array con unos numero y que queremos que a partir de ese se cree uno nuevo llamado <strong>doble</strong>
-        con los datos de cada item duplicado.
-        <pre>
-            <code>
-                numeros=[2,3,4];
+        Si presionamos <strong>Ctrl + Shif + F</strong> escribimos la palabra a buscar, la busca dentro de todo el proyecto. <br>
+
+    </article>
     
-                let duplicado=numeros.map(function (x){
-                    return x*2;
-                })
-            </code>
-        </pre>
-
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
+    <a href="cursoSpringBoot.html">⏫</a>
     <hr>
-    <h2 id="at">metodo at() con array</h2>
+    <h2 id="colecciones">Colecciones en Java</h2>
     <article>
-        El metodo <strong>at()</strong> nos devuelve la posicion que ocupa un elemento dentro de un array.  por ejemplo si queremos ver la posicion 2
-        del array numeros=[2,3,4], deberia mostrarnos el numero 4.
-        <pre>
-            <code>
-                numeros=[2,3,4];
-                let valor=numeros.at(2);
-                console.log(valor);
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="push">metodo push() con array</h2>
-    <article>
-        El metodo <strong>push()</strong> agrega un elemento al final del array
-        <pre>
-            <code>
-                numeros=[2,3,4];
-                numeros.push(25);
-                console.log(numeros); //nos muestra [2,3,4,25]
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="pop">metodo pop() con array</h2>
-    <article>
-        El metodo <strong>pop()</strong> elimina el ultimo elemento de array
-        <pre>
-            <code>
-                numeros=[2,3,4];
-                numeros.pop();
-                console.log(numeros); //nos muestra [2,3]
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="forEach">metodo forEach() con array</h2>
-    <article>
-        El metodo <strong>forEach()</strong> ejecuta una funcion a cada elementos de un array
-        <pre>
-            <code>
-                let numeros=[4,9,16]
-                numeros.forEach((elemento)=> console.log(elemento));
-
-                //nos muestra por consola 4
-                //nos muestra por consola 9
-                //nos muestra por consola 16
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="slice">metodo slice() con array</h2>
-    <article>
-        El metodo <strong>slice()</strong> nos devuelve una porcion de elementos de un array como un array nuevo
-        <pre>
-            <code>
-                let frutas=['manzana','pera','naranja','uvas']
-                let frutas2=frutas.slice(1,3);
-                console.log(frutas)
-                console.log(frutas2) // nos muestra ['pera','naranja']
-            </code>
-        </pre>
-    </article>
-
-    <a href="cursoJavaScript.html">⏫</a>
-    <hr>
-    <h2 id="objeto">metodo slice() con array de un objeto</h2>
-    <article>
-        El metodo <strong>slice()</strong> nos devuelve una porcion de elementos de un array como un array nuevo
-        <pre>
-            <code>
-                let miHonda = {
-                    color: "red",
-                    ruedas: 4,
-                    motor: { cilindros: 4, cantidad: 2.2 },
-                  };
-                  let miCoche = [miHonda, 2, "Buen estado", "comprado 1997"];
-                  let nuevoCoche = miCoche.slice(0, 2);
-                  
-                  //  Muestra los valores de myCar, newCar y el color de myHonda.
-                  console.log("Mycoche[0].ruedas = " + JSON.stringify(miCoche[0].ruedas));
-                  
-                  console.log("miCoche = " + JSON.stringify(miCoche));
-                  console.log("nuevoCoche = " + JSON.stringify(nuevoCoche));
-                  console.log("miCoche[0].color = " + miCoche[0].color);
-                  console.log("nuevoCoche[0].color = " + nuevoCoche[0].color);
-                  
-                  // Cambia el color de miHonda.
-                  miHonda.color = "azul";
-                  console.log("El nuevo color de mi Honda es " + miHonda.color);
-                  
-                  // Muestra el color de myHonda referenciado desde ambos arrays.
-                  console.log("miCoche[0].color = " + miCoche[0].color);
-                  
-                  console.log("nuevoCoche[0].color = " + nuevoCoche[0].color);
-            </code>
-        </pre>
+        Collection framewok; <br>
+        <ol>
+            <li>Collection</li>
+            <li>List</li>
+            <li>Set</li>
+            <li>Queue</li>
+        </ol>
     </article>
 
 </body>

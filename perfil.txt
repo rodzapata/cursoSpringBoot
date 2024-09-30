@@ -1,0 +1,9 @@
+Tener experiencia en control de versiones con GIT o SVN.
+Tener conocimiento en construcción de pruebas unitarias.
+Tener Conocimiento y experiencia de Spring Web flux
+
+No es necesario, pero sería grandioso saber que cuentas con:
+
+Conocimiento y experiencia en computación en AWS | Azure| GCP entre otros.
+Conocimiento en procesos de integración y despliegue continuo (DevSecOps) con herramientas como Jenkins y/o Azure DevOps | AWS entre otros.
+Conocimiento en estrategias de desarrollo como TDD| BDD| DDD.
