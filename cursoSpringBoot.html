@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curso de Spring Boot</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
@@ -15,49 +15,86 @@
     <h2>Indice Tematico</h2>
     <ul>
         <li><a href="cursoSpringBoot.html#referencia">Referencias</a></li>
-        <li><a href="cursoSpringBoot.html#patrones">Patrones de diseño mas usado con Spring Boot</a></li>
-        <li><a href="cursoSpringBoot.html#atajos">Atajos del teclado en Inellig J</a></li>
-        <li><a href="cursoSpringBoot.html#colecciones">Colecciones en java</a></li>
-
-
+        <li>
+            <a href="cursoSpringBoot.html#patrones">Patrones de diseño mas usado con Spring Boot</a>
+        </li>
+        <li>
+            <a href="cursoSpringBoot.html#atajos">Atajos del teclado en Inellig J</a>
+        </li>
+        <li>
+            <a href="cursoSpringBoot.html#colecciones">Colecciones en java</a>
+        </li>
     </ul>
 
     <a href="cursoSpringBoot.html">⏫</a>
-    <hr>
+    <hr />
     <h2 id="referencia">Referencias</h2>
     <article>
-        creacion de una api-rest con spring boot <a href="https://www.youtube.com/watch?v=7vHzVN0EiQc" target="_blank">curso Spring boot por Lucas moy</a> <br>
-        paso a paso jakarta tomado como base el blog <a href="https://danielme.com/curso-jakarta-ee-indice/" target="_blank">Danielme.com</a> <br>
-        programación funcional <a href="https://programandoenjava.com/streams-en-java-8/" target="_blank">programacion funcional en Java 8</a>, ademas
-        del blog <a href="https://blog.codmind.com/que-es-la-programacion-funcional-en-java/" target="_blank">programacion funcional </a> <br>
-        configuration initial, utilizaremos Inelig J , lo primero es que permita umentar el tamaño de la letra con Ctrol+Rueda del mouse.
+        creacion de una api-rest con spring boot
+        <a href="https://www.youtube.com/watch?v=7vHzVN0EiQc" target="_blank">curso Spring boot por Lucas moy</a>
+        <br />
+        paso a paso jakarta tomado como base el blog
+        <a href="https://danielme.com/curso-jakarta-ee-indice/" target="_blank">Danielme.com</a>
+        <br />
+        programación funcional
+        <a href="https://programandoenjava.com/streams-en-java-8/" target="_blank">programacion funcional en Java 8</a>,
+        ademas del blog
+        <a href="https://blog.codmind.com/que-es-la-programacion-funcional-en-java/" target="_blank">programacion
+            funcional
+        </a>
+        <br />
+        configuration initial, utilizaremos Inelig J , lo primero es que permita aumentar el tamaño de la letra con
+        Ctrol+Rueda del mouse.
         <strong>File - Setting - Edidtor - General y chuleamos la opcion Change font size with Crl + Mouse</strong>
-        <br>
-        Tambien podemos encontror un blog que trata sobre las colecciones . <a href="https://www.cosmiclearn.com/lang-es/java-collections.php">Colecciones</a>
-        <br>
-        para que la pagina no refresque en cache se presiona la <strong>Ctrl</strong> y despues con el mouse le damos click en <strong>Refresh</strong> <br>
-        
+        <br />
+        Tambien podemos encontror un blog que trata sobre las colecciones .
+        <a href="https://www.cosmiclearn.com/lang-es/java-collections.php">Colecciones</a>
+        <br />
+        para que la pagina no refresque en cache se presiona la
+        <strong>Ctrl</strong> y despues con el mouse le damos click en
+        <strong>Refresh</strong> <br />
+        ruta de aprendizaje para BackeEnd Java Developer
+        <a href="https://roadmap.sh/java" target="_blank" rel="noopener noreferrer">roadmap.sh</a> <br>
+        pagina para ver el listado de los mejores lenguajes para aprender: <a href="https://www.tiobe.com/tiobe-index/"
+            target="_blank" rel="noopener noreferrer"></a> <br>
+        pagina que posiciona los empleos solicitados <a href="https://www.tecnoempleo.com/" target="_blank"
+            rel="noopener noreferrer">tecnoempleo.com</a> donde podemos ver el listado por tecnologia <a
+            href="https://www.tecnoempleo.com/ofertas-trabajo/programador" target="_blank"
+            rel="noopener noreferrer">listado por tecnologia</a> <br>
+        Tambien existe un listado en todo el mundo <a
+            href="https://www.pluralsight.com/resources/blog/upskilling/top-programming-languages-2025" target="_blank"
+            rel="noopener noreferrer">Pluralsight.com</a> <br>
+        ruta recomendada para conseguir empleo como developer java <a
+            href="https://www.pluralsight.com/paths/java-se-17" target="_blank" rel="noopener noreferrer">ruta para
+            empleos </a>
     </article>
 
     <a href="cursoSpringBoot.html">⏫</a>
-    <hr>
+    <hr />
     <h2 id="patrones">Patrones de diseño mas usado con Spring Boot</h2>
     <article>
-        Los patrones de diseños mas utilizados son: <br>
-        <strong>1. Patrón MVC (Model-View-Controller):</strong> <br>
-        <strong>Descripción:</strong> Este patrón organiza el código en tres componentes: el Modelo (donde se encuentran las clases de negocio y datos),
-         el Controlador (que maneja las peticiones del cliente) y la Vista (que muestra los datos o devuelve la respuesta al cliente). <br>
-        <strong>Uso en Spring Boot:</strong>Spring Boot usa este patrón especialmente en aplicaciones web o APIs REST. <br>
-         Los controladores están anotados con @Controller o @RestController, 
-         los modelos son las entidades anotadas con @Entity, 
-         y la vista, si existe, puede ser manejada con tecnologías como <strong>Thymeleaf</strong>, o en el caso de APIs REST, el JSON o XML generado. <br><br>
-    
-         <strong>2. Patrón DAO (Data Access Object):</strong> <br>  
-         <strong>Descripción:</strong> El patrón DAO se utiliza para abstraer el acceso a la base de datos. <br>
-          Ayuda a separar la lógica de negocio del acceso a los datos, lo que hace que la aplicación sea más mantenible. <br>
-          <strong>Uso en Spring Boot:</strong> Los DAOs suelen estar anotados con @Repository y usan tecnologías como JPA o Spring Data 
-          para interactuar con la base de datos. <br>
-          Ejemplo: 
+        Los patrones de diseños mas utilizados son: <br />
+        <strong>1. Patrón MVC (Model-View-Controller):</strong> <br />
+        <strong>Descripción:</strong> Este patrón organiza el código en tres
+        componentes: el Modelo (donde se encuentran las clases de negocio y
+        datos), el Controlador (que maneja las peticiones del cliente) y la Vista
+        (que muestra los datos o devuelve la respuesta al cliente). <br />
+        <strong>Uso en Spring Boot:</strong>Spring Boot usa este patrón
+        especialmente en aplicaciones web o APIs REST. <br />
+        Los controladores están anotados con @Controller o @RestController, los
+        modelos son las entidades anotadas con @Entity, y la vista, si existe,
+        puede ser manejada con tecnologías como <strong>Thymeleaf</strong>, o en
+        el caso de APIs REST, el JSON o XML generado. <br /><br />
+
+        <strong>2. Patrón DAO (Data Access Object):</strong> <br />
+        <strong>Descripción:</strong> El patrón DAO se utiliza para abstraer el
+        acceso a la base de datos. <br />
+        Ayuda a separar la lógica de negocio del acceso a los datos, lo que hace
+        que la aplicación sea más mantenible. <br />
+        <strong>Uso en Spring Boot:</strong> Los DAOs suelen estar anotados con
+        @Repository y usan tecnologías como JPA o Spring Data para interactuar con
+        la base de datos. <br />
+        Ejemplo:
         <pre>
             <code>
                 @Repository
@@ -66,10 +103,14 @@
             </code>
         </pre>
 
-        <strong>3. Patrón DTO (Data Transfer Object):</strong> <br>
-        <strong>Descripción:</strong> El patrón DTO se utiliza para transferir datos entre diferentes capas de la aplicación. <br>
-        Sirve para encapsular los datos que deben ser enviados a través de la red o entre componentes, y a menudo se usa para evitar el exceso de información innecesaria.
-        Uso en Spring Boot: Muy común en aplicaciones REST, donde los datos de las entidades se transforman en DTOs antes de enviarlos como respuesta a los clientes. <br>
+        <strong>3. Patrón DTO (Data Transfer Object):</strong> <br />
+        <strong>Descripción:</strong> El patrón DTO se utiliza para transferir
+        datos entre diferentes capas de la aplicación. <br />
+        Sirve para encapsular los datos que deben ser enviados a través de la red
+        o entre componentes, y a menudo se usa para evitar el exceso de
+        información innecesaria. Uso en Spring Boot: Muy común en aplicaciones
+        REST, donde los datos de las entidades se transforman en DTOs antes de
+        enviarlos como respuesta a los clientes. <br />
         Ejemplo:
         <pre>
             <code>
@@ -81,11 +122,14 @@
                 
             </code>
         </pre>
-       
-        <strong>4. Patrón Singleton:</strong> <br>
-        <strong>Descripción:</strong> Garantiza que solo exista una instancia de una clase en toda la aplicación. <br>
-        <strong>Uso en Spring Boot:</strong>Spring Boot usa este patrón para gestionar <strong>beans</strong> dentro del contexto de Spring. <br>
-        Por defecto, los beans en Spring son Singletons, lo que significa que solo hay una instancia de cada bean por contexto de aplicación. <br>
+
+        <strong>4. Patrón Singleton:</strong> <br />
+        <strong>Descripción:</strong> Garantiza que solo exista una instancia de
+        una clase en toda la aplicación. <br />
+        <strong>Uso en Spring Boot:</strong>Spring Boot usa este patrón para
+        gestionar <strong>beans</strong> dentro del contexto de Spring. <br />
+        Por defecto, los beans en Spring son Singletons, lo que significa que solo
+        hay una instancia de cada bean por contexto de aplicación. <br />
         Ejemplo:
         <pre>
             <code>
@@ -96,13 +140,16 @@
             </code>
         </pre>
 
-        <strong>5. Patrón Dependency Injection (DI):</strong> <br>
-        <strong>Descripción:</strong>  Es uno de los patrones más importantes y básicos en Spring. <br>
-         Permite inyectar las dependencias necesarias en una clase desde afuera en lugar de crear dependencias dentro de la propia clase. <br>
-         <strong>Uso en Spring Boot:</strong>  Spring Boot utiliza inyección de dependencias de manera predeterminada mediante anotaciones como
-         <strong>@Autowired, @Service, @Repository</strong> , etc. <br>
-         Ejemplo:
-         <pre>
+        <strong>5. Patrón Dependency Injection (DI):</strong> <br />
+        <strong>Descripción:</strong> Es uno de los patrones más importantes y
+        básicos en Spring. <br />
+        Permite inyectar las dependencias necesarias en una clase desde afuera en
+        lugar de crear dependencias dentro de la propia clase. <br />
+        <strong>Uso en Spring Boot:</strong> Spring Boot utiliza inyección de
+        dependencias de manera predeterminada mediante anotaciones como
+        <strong>@Autowired, @Service, @Repository</strong> , etc. <br />
+        Ejemplo:
+        <pre>
              <code>
                 @Service
                 public class UserService {
@@ -116,13 +163,16 @@
                 }
             </code>
          </pre>
-         
-         <strong>6. Patrón Factory:</strong> <br>
-         <strong>Descripción:</strong>Crea instancias de objetos sin que el código de la aplicación sepa los detalles de la creación. <br>
-         <strong>Uso en Spring Boot:</strong> Spring Boot permite la creación de beans personalizados mediante fábricas (@Bean en clases de configuración), <br>
-         lo que sigue el patrón de diseño Factory. <br>
-         Ejemplo:
-         <pre>
+
+        <strong>6. Patrón Factory:</strong> <br />
+        <strong>Descripción:</strong>Crea instancias de objetos sin que el código
+        de la aplicación sepa los detalles de la creación. <br />
+        <strong>Uso en Spring Boot:</strong> Spring Boot permite la creación de
+        beans personalizados mediante fábricas (@Bean en clases de configuración),
+        <br />
+        lo que sigue el patrón de diseño Factory. <br />
+        Ejemplo:
+        <pre>
              <code>
                 @Configuration
                 public class AppConfig {
@@ -134,13 +184,15 @@
                 }
             </code>
          </pre>
- 
-         <strong>7. Patrón Proxy:</strong> <br>
-         <strong>Descripción:</strong> Proporciona un intermediario o representante que controla el acceso a otro objeto. <br>
-         <strong>Uso en Spring Boot:</strong>Este patrón es utilizado por Spring AOP (Aspect-Oriented Programming) para implementar características <br>
-         transversales como la seguridad,  el logging o las transacciones. <br>
-         Ejemplo:
-         <pre>
+
+        <strong>7. Patrón Proxy:</strong> <br />
+        <strong>Descripción:</strong> Proporciona un intermediario o representante
+        que controla el acceso a otro objeto. <br />
+        <strong>Uso en Spring Boot:</strong>Este patrón es utilizado por Spring
+        AOP (Aspect-Oriented Programming) para implementar características <br />
+        transversales como la seguridad, el logging o las transacciones. <br />
+        Ejemplo:
+        <pre>
              <code>
                 @Transactional
                 public void someTransactionalMethod() {
@@ -148,26 +200,28 @@
                 }
              </code>
          </pre>
-         <strong>Conclusión:</strong> <br>
-         El patrón MVC es el más utilizado en Spring Boot, especialmente para aplicaciones web y APIs REST. <br>
-         Sin embargo, Spring Boot es flexible y permite el uso de otros patrones como DAO, DTO, Singleton, Factory, y Dependency Injection, <br>
-         todos fundamentales en aplicaciones empresariales. La combinación de estos patrones asegura una arquitectura robusta, mantenible y extensible. <br>
-        
+        <strong>Conclusión:</strong> <br />
+        El patrón MVC es el más utilizado en Spring Boot, especialmente para
+        aplicaciones web y APIs REST. <br />
+        Sin embargo, Spring Boot es flexible y permite el uso de otros patrones
+        como DAO, DTO, Singleton, Factory, y Dependency Injection, <br />
+        todos fundamentales en aplicaciones empresariales. La combinación de estos
+        patrones asegura una arquitectura robusta, mantenible y extensible. <br />
     </article>
 
     <a href="cursoSpringBoot.html">⏫</a>
-    <hr>
+    <hr />
     <h2 id="atajos">Atajos del Teclado en Intellig J</h2>
     <article>
-        Si presionamos <strong>Ctrl + Shif + F</strong> escribimos la palabra a buscar, la busca dentro de todo el proyecto. <br>
-
+        Si presionamos <strong>Ctrl + Shif + F</strong> escribimos la palabra a
+        buscar, la busca dentro de todo el proyecto. <br />
     </article>
-    
+
     <a href="cursoSpringBoot.html">⏫</a>
-    <hr>
+    <hr />
     <h2 id="colecciones">Colecciones en Java</h2>
     <article>
-        Collection framewok; <br>
+        Collection framewok; <br />
         <ol>
             <li>Collection</li>
             <li>List</li>
@@ -180,19 +234,21 @@
         <table>
             <thead>
                 <tr>
-                    <th>Collecion </th>
-                    <th>cuando usarla </th>
+                    <th>Collecion</th>
+                    <th>cuando usarla</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>List</td>
-                    <td>Cuando necesitas mantener el orden de inserción y permitir duplicados.</td>
+                    <td>
+                        Cuando necesitas mantener el orden de inserción y permitir
+                        duplicados.
+                    </td>
                 </tr>
             </tbody>
         </table>
     </article>
-
 </body>
 
 </html>
