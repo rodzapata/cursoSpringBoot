@@ -19,6 +19,12 @@
             <a href="cursoSpringBoot.html#patrones">Patrones de diseño mas usado con Spring Boot</a>
         </li>
         <li>
+            <a href="cursoSpringBoot.html#Dto">DTO transferencia de informacion entre las capas</a>
+        </li>
+        <li>
+            <a href="cursoSpringBoot.html#mapeo">mapeo de MapStruct</a>
+        </li>
+        <li>
             <a href="cursoSpringBoot.html#atajos">Atajos del teclado en Inellig J</a>
         </li>
         <li>
@@ -26,6 +32,9 @@
         </li>
         <li>
             <a href="cursoSpringBoot.html#jmeter">Jmeter para probar cargas y rendimiento en las Rest API</a>
+        </li>
+        <li>
+            <a href="cursoSpringBoot.html#doker">Contenedor Doker</a>
         </li>
     </ul>
 
@@ -216,6 +225,70 @@
 
     <a href="cursoSpringBoot.html">⏫</a>
     <hr />
+    <h2 id="Dto">DTo</h2>
+    <article>
+        los <strong>Dto</strong> son los mecanimmo utilizado para transferir datos entre las diferentes capas. por lo general se escribe una clase como:
+        <pre>
+            package com.serviparamo.api_rest.dto;
+
+            import jakarta.validation.constraints.NotBlank;
+            import jakarta.validation.constraints.NotNull;
+            import lombok.AllArgsConstructor;
+            import lombok.Builder;
+            import lombok.Data;
+            
+            import java.util.Date;
+            
+            @Data
+            @AllArgsConstructor
+            @Builder
+            
+            public class CustomerDto {
+                private Long id;
+            
+                @NotBlank
+                private String fullName;
+            
+                @NotNull
+                private Date bornDate;
+            
+               // @NotNull
+                private Long state;
+            
+                @NotBlank
+                private String email;
+            
+                @NotBlank
+                private String phone;
+            
+                //@NotBlank
+                private String address;
+            
+                //@NotBlank
+                private String city;
+            
+            }
+        </pre>
+
+        Pero existe una nueva forma de crear Dto y es utilizando <strong>record</strong> y el codigo es el siguiente:
+        <pre>
+            package com.serviparamo.api_rest.dto;
+    
+            public record CustomerDto(Long id, String fullName, Date bornDate, Long state, String email,  String phone, String address, String city) {
+    
+            }
+
+        </pre>
+
+    </article>
+    <a href="cursoSpringBoot.html">⏫</a>
+    <hr />
+    <h2 id="mapeo">Mapeo de Datos usando MapStruct</h2>
+    <article>
+        para el mapeo econtré un totoial <a href="https://www.youtube.com/watch?v=nMIdoGcE5XE" target="_blank" rel="noopener noreferrer">mapeo Struct</a>
+     </article>
+    <a href="cursoSpringBoot.html">⏫</a>
+    <hr />
     <h2 id="atajos">Atajos del Teclado en Intellig J</h2>
     <article>
         Si presionamos <strong>Ctrl + Shif + F</strong> escribimos la palabra a
@@ -266,6 +339,16 @@
         despues lo descomprimimos en la raiz c:\ , despues entramos a la carpeta <strong>bin</strong> y ejecutamos el archivo jmeter.bat <br>
         
 
+    </article>
+
+    <a href="cursoSpringBoot.html">⏫</a>
+    <hr />
+    <h2 id="doker">Contenedor Doker</h2>
+    <article>
+        Donde se guarda los volumenes de docker ?
+        <pre>
+            Docker volume inspect d319c87f730f06f9f0f96040d07c74c27da736cff4637742508a41740df506ec
+        </pre>
     </article>
 
 
