@@ -36,6 +36,9 @@
         <li>
             <a href="cursoSpringBoot.html#doker">Contenedor Doker</a>
         </li>
+        <li>
+            <a href="cursoSpringBoot.html#jenkins">Jenkins</a>
+        </li>
     </ul>
 
     <a href="cursoSpringBoot.html">⏫</a>
@@ -48,8 +51,10 @@
         paso a paso jakarta tomado como base el blog
         <a href="https://danielme.com/curso-jakarta-ee-indice/" target="_blank">Danielme.com</a>
         <br />
-        Spring boot desde FreeCodeCamp <a href="https://www.freecodecamp.org/news/tag/spring-boot/" target="_blank" rel="noopener noreferrer">FreeCodeCamp Spring Boot</a>
-        Curso completo de Sprng Boot y Spring Data JPA completo <a href="https://www.youtube.com/watch?v=5rNk7m_zlAg" target="_blank" rel="noopener noreferrer"></a>
+        Spring boot desde FreeCodeCamp <a href="https://www.freecodecamp.org/news/tag/spring-boot/" target="_blank"
+            rel="noopener noreferrer">FreeCodeCamp Spring Boot</a>
+        Curso completo de Sprng Boot y Spring Data JPA completo <a href="https://www.youtube.com/watch?v=5rNk7m_zlAg"
+            target="_blank" rel="noopener noreferrer"></a>
         programación funcional
         <a href="https://programandoenjava.com/streams-en-java-8/" target="_blank">programacion funcional en Java 8</a>,
         ademas del blog
@@ -61,6 +66,11 @@
         Ctrol+Rueda del mouse.
         <strong>File - Setting - Edidtor - General y chuleamos la opcion Change font size with Crl + Mouse</strong>
         <br />
+        En <strong>Intelig J</strong> me estaba marcando error unas lineas que no tenian error,
+        para solicionarlo me fui a <strong>File - Project structure</strong> escogi la opcion
+        <strong>language level</strong> y la cambié de <strong>SDK default </strong> a <strong>21 record
+            patterns</strong> <br>
+
         Tambien podemos encontror un blog que trata sobre las colecciones .
         <a href="https://www.cosmiclearn.com/lang-es/java-collections.php">Colecciones</a>
         <br />
@@ -227,7 +237,8 @@
     <hr />
     <h2 id="Dto">DTo</h2>
     <article>
-        los <strong>Dto</strong> son los mecanimmo utilizado para transferir datos entre las diferentes capas. por lo general se escribe una clase como:
+        los <strong>Dto</strong> son los mecanimmo utilizado para transferir datos entre las diferentes capas. por lo
+        general se escribe una clase como:
         <pre>
             package com.serviparamo.api_rest.dto;
 
@@ -285,8 +296,9 @@
     <hr />
     <h2 id="mapeo">Mapeo de Datos usando MapStruct</h2>
     <article>
-        para el mapeo econtré un totoial <a href="https://www.youtube.com/watch?v=nMIdoGcE5XE" target="_blank" rel="noopener noreferrer">mapeo Struct</a>
-     </article>
+        para el mapeo econtré un totoial <a href="https://www.youtube.com/watch?v=nMIdoGcE5XE" target="_blank"
+            rel="noopener noreferrer">mapeo Struct</a>
+    </article>
     <a href="cursoSpringBoot.html">⏫</a>
     <hr />
     <h2 id="atajos">Atajos del Teclado en Intellig J</h2>
@@ -332,12 +344,16 @@
     <hr />
     <h2 id="jmeter">Jmeter para probar cargas y REst API</h2>
     <article>
-        tutorial del instalacion y uso de Jmeter <a href="https://www.youtube.com/watch?v=UbyIXjoLqUU&list=PL9qpFd_9rkKULbsCdjpPBbU_n60sFsTbn" 
-        target="_blank" rel="noopener noreferrer">Tutorial QA SDET</a>
-        Descargamos el programa desde la pagina <a href="https://jmeter.apache.org/download_jmeter.cgi" target="_blank" rel="noopener noreferrer">https://jmeter.apache.org/download_jmeter.cgi</a>
-        <a href="https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.zip" target="_blank" rel="noopener noreferrer">descargamos el zip</a> <br>
-        despues lo descomprimimos en la raiz c:\ , despues entramos a la carpeta <strong>bin</strong> y ejecutamos el archivo jmeter.bat <br>
-        
+        tutorial del instalacion y uso de Jmeter <a
+            href="https://www.youtube.com/watch?v=UbyIXjoLqUU&list=PL9qpFd_9rkKULbsCdjpPBbU_n60sFsTbn" target="_blank"
+            rel="noopener noreferrer">Tutorial QA SDET</a>
+        Descargamos el programa desde la pagina <a href="https://jmeter.apache.org/download_jmeter.cgi" target="_blank"
+            rel="noopener noreferrer">https://jmeter.apache.org/download_jmeter.cgi</a>
+        <a href="https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.zip" target="_blank"
+            rel="noopener noreferrer">descargamos el zip</a> <br>
+        despues lo descomprimimos en la raiz c:\ , despues entramos a la carpeta <strong>bin</strong> y ejecutamos el
+        archivo jmeter.bat <br>
+
 
     </article>
 
@@ -349,8 +365,70 @@
         <pre>
             Docker volume inspect d319c87f730f06f9f0f96040d07c74c27da736cff4637742508a41740df506ec
         </pre>
+        ver imagenes que tengo descargada en mi computador
+        <pre>
+            docker images
+        </pre>
+        quiero ver que version de jdk se instaló con jenkins, entonce tengo que buscar el id del contenedor
+        <pre>
+            docker ps
+        </pre>
+        me mostro contenedor_id <strong>2f1d1f4524c8</strong>, ahora hay que entrar al contenedor : <br>
+        <pre>
+            docker exec -it 2f1d1f4524c8 bash
+        </pre>
+        una vez adentro ejecutamos el comando para verificar la version de jdk <br>
+        <pre>
+            java --version
+        </pre>
+        para salirme de modo bash, simplemente en la consola escribimos <strong>exit</strong>  y presionamos la tecla <strong>enter</strong> <br>
     </article>
 
+    <a href="cursoSpringBoot.html">⏫</a>
+    <hr />
+    <h2 id="jenkins">Jenkins</h2>
+    <article>
+        pagina oficial de jenkis <a href="https://www.jenkins.io/" target="_blank" rel="noopener noreferrer">Jenkins
+            pagina oficial</a> <br>
+        Jenkins es una herramienta de automatización de código abierto muy usada en desarrollo de software para
+        implementar Integración Continua (CI) y Entrega Continua (CD). <br>
+        <a href="https://www.youtube.com/watch?v=vdFMKZeZXjM&list=PLDbrnXa6SAzVcsjOn8abityag7O-MP9Ci&index=1"
+            target="_blank" rel="noopener noreferrer">curso de Jenkis bfbastidas</a> <br>
+
+        Instalacion de Jenkins usando instalador de windows <a href="https://www.youtube.com/watch?v=XuMrEDA8cAI&t=1s" target="_blank" rel="noopener noreferrer">instalando jenkins en windows</a> <br>
+        
+        Instalacion de Jenkins usando docker: <br>
+        <pre>
+            docker run -d -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts   
+        </pre>
+        si queremos especificar la version de java que deseamos le agregamos despues del <strong>lts-jdk21</strong> <br>
+        quedando de la siguente forma:
+        <pre>
+            docker run -d -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk21   
+        </pre>
+
+        una vez instalado si nos vamos al navegador y escribimos:
+        <pre>
+            http://localhost:8080/
+        </pre>        
+        debe mostrar una ventana de jenkis donde nos pide el password del admininistrado y nos muestra una ruta en mi caso es :
+        <pre>
+            /var/jenkins_home/secrets/initialAdminPassword
+        </pre>
+        para poder ver este password debemos entradar a contenedor en modo bash . <br>
+        <pre>
+            docker ps
+        </pre>
+        me mostro contenedor_id <strong>2f1d1f4524c8</strong>, ahora hay que entrar al contenedor : <br>
+        <pre>
+            docker exec -it 2f1d1f4524c8 bash
+        </pre>
+        una vez adentro escribimos el comando <strong>cat</strong> y la ruta del password <br>
+        <pre>
+            cat /var/jenkins_home/secrets/initialAdminPassword
+        </pre>
+
+    </article>
 
 </body>
 
